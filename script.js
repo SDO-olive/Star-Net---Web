@@ -58,6 +58,16 @@ const contentData = {
       name: "Star Gazing",
       description: "Our main community and service server",
       link: "https://discord.gg/6pRmyX9h2T"
+    },
+    {
+      name: "Starry Advertise",
+      description: "A place to advertise your projects!",
+      link: "https://discord.gg/UyfHFTfnCJ"
+    },
+    {
+      name: "Starry Portal",
+      description: "A place to Hire bubble as Partner Manager for your server!",
+      link: "https://discord.gg/Q9zFafkj8B"
     }
   ]
 };
@@ -70,7 +80,7 @@ function loadOwnerMessages() {
   container.innerHTML = contentData.ownerMessages.map(msg => `
     <div class="message-card">
       <div class="message-author">💬 ${msg.author}</div>
-      <div class="message-content">${msg.content.split('\\n').join('<br>')}</div>
+      <div class="message-content">${msg.content.split('\n').join('<br>')}</div>
     </div>
   `).join('');
 }
