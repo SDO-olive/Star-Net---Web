@@ -6,51 +6,64 @@ const contentData = {
       content: "Hey everyone! First of all, thank you for being here, whether you are one of our member or an outsider.\n\nThis server was created with two core goals in mind:\n→ Community: A chill relaxing place people can hang around\n→ Service: Providing service for those who wants to grow their server.\n\nA few small, but important reminders:\n— .✦ Be kind and respectful\n— .✦ Respect the rules—they're here to protect everyone.\n\nThis is not my server, it is Ours! Lets make this server a better place! ^^\n\nWith appreciation,\n-- Oliver"
     }
   ],
-  services: [
+  serviceCategories: [
     {
-      name: "Advertising",
-      category: "Server Development",
-      description: "Get your server advertised to our community"
+      name: "Server Development Services",
+      icon: "🚀",
+      services: [
+        {
+          name: "Project Advertising",
+          description: "We will send your advertisement in other servers."
+        },
+        {
+          name: "Project Partnering",
+          description: "We will help you partner with other servers."
+        },
+        {
+          name: "Serv/Ad Feedback",
+          description: "We will send feedbacks on how to improve your server/Advertisement."
+        },
+        {
+          name: "Server Chatter",
+          description: "We will send someone to chat in our server for the amount you bought."
+        }
+      ]
     },
     {
-      name: "Partnering",
-      category: "Server Development",
-      description: "Partner with our growing network"
+      name: "Project Design Services",
+      icon: "🎨",
+      services: [
+        {
+          name: "Icon Making",
+          description: "We will make a custom icon for your project!"
+        },
+        {
+          name: "Advertisement Making",
+          description: "We will make a custom advertisement for your project by your taste!"
+        },
+        {
+          name: "Banner Making",
+          description: "We will make a custom banner for your project by your taste!"
+        }
+      ]
     },
     {
-      name: "Feedback",
-      category: "Server Development",
-      description: "Get valuable feedback from our experts"
-    },
-    {
-      name: "Custom Banner Design",
-      category: "Designing Services",
-      description: "Professional custom banner for your server"
-    },
-    {
-      name: "Custom Icon Design",
-      category: "Designing Services",
-      description: "Eye-catching custom server icon"
-    },
-    {
-      name: "Custom Advertisement",
-      category: "Designing Services",
-      description: "Unique advertisement design"
-    },
-    {
-      name: "Basic Channel/Roles Setup",
-      category: "Server Setup",
-      description: "Professional channel and role organization"
-    },
-    {
-      name: "Bots Setup",
-      category: "Server Setup",
-      description: "Configure and install bots for your server"
-    },
-    {
-      name: "Extra Setup",
-      category: "Server Setup",
-      description: "Additional customization and configuration"
+      name: "Server Setup Services",
+      icon: "⚙️",
+      services: [
+        {
+          name: "Basic Setup",
+          description: "We will help set up your server's basic stuff!"
+        },
+        {
+          name: "Bots Setup",
+          description: "We will help set up your server's basic bots!"
+        },
+        {
+          name: "Extra Setup",
+          description: "We will help set up your server's extra things!"
+        }
+      ]
     }
   ],
   servers: [
@@ -85,20 +98,27 @@ function loadOwnerMessages() {
   `).join('');
 }
 
-// Load services
-function loadServices() {
-  const container = document.getElementById('servicesContainer');
+// Load services by category
+function loadServiceCategories() {
+  const container = document.getElementById('servicesCategoriesContainer');
   if (!container) return;
 
-  const servicesHTML = contentData.services.map(service => `
-    <div class="service-card">
-      <h3>${service.name}</h3>
-      <p style="color: var(--accent-gold); font-size: 0.9rem; margin-bottom: 0.5rem;">${service.category}</p>
-      <p>${service.description}</p>
+  container.innerHTML = contentData.serviceCategories.map(category => `
+    <div class="service-category">
+      <div class="category-header">
+        <span class="category-icon">${category.icon}</span>
+        <h2>${category.name}</h2>
+      </div>
+      <div class="services-grid">
+        ${category.services.map(service => `
+          <div class="service-card">
+            <h3>${service.name}</h3>
+            <p>${service.description}</p>
+          </div>
+        `).join('')}
+      </div>
     </div>
   `).join('');
-
-  container.innerHTML = servicesHTML;
 }
 
 // Load other servers
@@ -118,7 +138,7 @@ function loadServers() {
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
   loadOwnerMessages();
-  loadServices();
+  loadServiceCategories();
   loadServers();
 
   // Add smooth scrolling
