@@ -2,8 +2,8 @@
 const contentData = {
   ownerMessages: [
     {
-      author: "Oliver (Owner)",
-      content: "Hey everyone! First of all, thank you for being here, whether you are one of our member or an outsider.\n\nThis server was created with two core goals in mind:\n— Community: A chill relaxing place people can hang around\n— Service: Providing service for those who wants to grow their projects.\n\nA few small, but important reminders:\n— Be kind and respectful\n— Respect the rules—they're here to protect everyone.\n\nThis is not my server, it is Ours! Lets make this server a better place! ^^\n\nWith appreciation,\n— Oliver"
+      author: "SDO Owner",
+      content: "Greetings! First of all, thank you for being here, whether you are one of our member or an outsider.\n\nThis server was created with two core goals in mind:\n⭐ Community: A chill relaxing place people can hang around\n⭐ Service: Providing service for those who wants to grow their projects.\n\nA few small, but important reminders:\n⭐ Be kind and respectful\n⭐ Respect the rules—they're here to protect everyone.\n\nThis is not my server, it is Ours! Lets make this server a better place! ^^\n\nWith appreciation,\n— Oliver"
     }
   ],
   serviceCategories: [
@@ -92,7 +92,7 @@ function loadOwnerMessages() {
 
   container.innerHTML = contentData.ownerMessages.map(msg => `
     <div class="message-card">
-      <div class="message-author">💬 ${msg.author}</div>
+      <div class="message-author"> ${msg.author}</div>
       <div class="message-content">${msg.content.split('\n').join('<br>')}</div>
     </div>
   `).join('');
