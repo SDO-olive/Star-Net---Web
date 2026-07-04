@@ -836,23 +836,3 @@ body {
     grid-template-columns: 1fr;
   }
 }
-
-/* About section heading should match Server Information */
-.about-section h2 {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: var(--accent-gold);   /* yellow like Server Information */
-  text-align: center;          /* center like Server Information */
-}
-
-/* Ensure any leftover inner title is hidden (removes blue inner text) */
-.about-section .message-author {
-  display: none !important;
-}
-
-/* Ensure the message text uses primary color (white) */
-.about-section .message-content {
-  color: var(--text-primary);
-  line-height: 1.8;
-}
