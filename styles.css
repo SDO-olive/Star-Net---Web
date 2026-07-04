@@ -857,3 +857,21 @@ body {
   line-height: 1.8;
   font-size: 1.05rem;
 }
+/* Force About Us heading to match Server Information and hide inner blue label */
+.about-section > .container > h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--accent-gold) !important;   /* yellow */
+  text-align: center;
+}
+
+.about-section .message-author {
+  display: none !important;               /* hide inner blue title if present */
+}
+
+.about-section .message-content {
+  color: var(--text-primary) !important;  /* white text */
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
